@@ -1,5 +1,4 @@
 public class CylinderVolume {
-    public class CylinderVolume {
     public static void main(String[] args) {
         java.util.Scanner scanner = new java.util.Scanner(System.in);
         System.out.print("Enter the radius of the cylinder: ");
@@ -11,4 +10,3 @@ public class CylinderVolume {
         scanner.close();
     }
 } 
-}

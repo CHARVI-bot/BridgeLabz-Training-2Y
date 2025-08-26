@@ -1,5 +1,4 @@
 public class ArithmeticOperators {
-    public class ArithmeticOperators {
     public static void main(String[] args) {
         int a = 10;
         int b = 3;
@@ -11,4 +10,4 @@ public class ArithmeticOperators {
         System.out.println("Modulus: " + (a % b));          // 1
     }
 }
-}
+
