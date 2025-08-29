@@ -4,7 +4,6 @@ public class FactorsUsingWhile {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Step 1: Get input and validate
         System.out.print("Enter a positive integer: ");
         int number = scanner.nextInt();
 
@@ -13,7 +12,6 @@ public class FactorsUsingWhile {
             return;
         }
 
-        // Step 2: Initialize counter
         int counter = 1;
 
         System.out.println("Factors of " + number + " (excluding itself):");
