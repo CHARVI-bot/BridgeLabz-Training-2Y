@@ -8,13 +8,12 @@ public class StudentVoteChecker {
         }
         return age >= 18; 
     }
+public static void main(String[] args) {
+    int[] studentAges = new int[10];
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int[] studentAges = new int[10];
+    System.out.println("Enter the age of 10 students:");
 
-        System.out.println("Enter the age of 10 students:");
-
+    try (Scanner scanner = new Scanner(System.in)) {
         for (int i = 0; i < studentAges.length; i++) {
             System.out.print("Student " + (i + 1) + " age: ");
             studentAges[i] = scanner.nextInt();
@@ -27,7 +26,6 @@ public class StudentVoteChecker {
                 System.out.println("Student " + (i + 1) + " is NOT eligible to vote.");
             }
         }
-
-        scanner.close();
     }
+}
 }
