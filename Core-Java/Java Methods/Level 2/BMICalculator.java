@@ -29,29 +29,28 @@ public class BMICalculator {
         return status;
     }
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        double[][] teamData = new double[10][3]; // [weight, height, BMI]
+public static void main(String[] args) {
+    double[][] teamData = new double[10][3]; // [weight, height, BMI]
 
-        System.out.println("Enter weight (kg) and height (cm) for 10 team members:");
+    System.out.println("Enter weight (kg) and height (cm) for 10 team members:");
 
+    try (Scanner scanner = new Scanner(System.in)) {
         for (int i = 0; i < teamData.length; i++) {
             System.out.print("Person " + (i + 1) + " weight (kg): ");
             teamData[i][0] = scanner.nextDouble();
             System.out.print("Person " + (i + 1) + " height (cm): ");
             teamData[i][1] = scanner.nextDouble();
         }
-
-        calculateBMI(teamData);
-        String[] bmiStatus = determineBMIStatus(teamData);
-
-        System.out.println("\nBMI Report:");
-        System.out.printf("%-10s %-10s %-10s %-15s\n", "Weight", "Height", "BMI", "Status");
-        for (int i = 0; i < teamData.length; i++) {
-            System.out.printf("%-10.2f %-10.2f %-10.2f %-15s\n",
-                    teamData[i][0], teamData[i][1], teamData[i][2], bmiStatus[i]);
-        }
-
-        scanner.close();
     }
+
+    calculateBMI(teamData);
+    String[] bmiStatus = determineBMIStatus(teamData);
+
+    System.out.println("\nBMI Report:");
+    System.out.printf("%-10s %-10s %-10s %-15s\n", "Weight", "Height", "BMI", "Status");
+    for (int i = 0; i < teamData.length; i++) {
+        System.out.printf("%-10.2f %-10.2f %-10.2f %-15s\n",
+                teamData[i][0], teamData[i][1], teamData[i][2], bmiStatus[i]);
+    }
+}
 }
