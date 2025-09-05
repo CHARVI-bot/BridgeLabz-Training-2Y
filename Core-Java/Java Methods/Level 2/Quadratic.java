@@ -18,27 +18,25 @@ public class Quadratic {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print("Enter coefficient a: ");
+            double a = scanner.nextDouble();
 
-        System.out.print("Enter coefficient a: ");
-        double a = scanner.nextDouble();
+            System.out.print("Enter coefficient b: ");
+            double b = scanner.nextDouble();
 
-        System.out.print("Enter coefficient b: ");
-        double b = scanner.nextDouble();
+            System.out.print("Enter coefficient c: ");
+            double c = scanner.nextDouble();
 
-        System.out.print("Enter coefficient c: ");
-        double c = scanner.nextDouble();
+            double[] roots = findRoots(a, b, c);
 
-        double[] roots = findRoots(a, b, c);
-
-        if (roots.length == 2) {
-            System.out.printf("Two real roots: x = %.2f and x = %.2f\n", roots[0], roots[1]);
-        } else if (roots.length == 1) {
-            System.out.printf("One real root: x = %.2f\n", roots[0]);
-        } else {
-            System.out.println("No real roots. The equation has complex roots.");
+            switch (roots.length) {
+    case 2 -> System.out.printf("Two real roots: x = %.2f and x = %.2f%n", roots[0], roots[1]);
+    case 1 -> System.out.printf("One real root: x = %.2f%n", roots[0]);
+    case 0 -> System.out.println("No real roots. The equation has complex roots.");
+    default -> System.out.println("Unexpected result.");
+    
+            }
         }
-
-        scanner.close();
     }
 }
