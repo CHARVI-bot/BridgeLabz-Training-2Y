@@ -17,9 +17,9 @@ public class NumberAnalyzer {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int[] numbers = new int[5];
+    int[] numbers = new int[5];
 
+    try (Scanner scanner = new Scanner(System.in)) {
         System.out.println("Enter 5 numbers:");
 
         for (int i = 0; i < numbers.length; i++) {
@@ -38,15 +38,13 @@ public class NumberAnalyzer {
         }
 
         int result = compare(numbers[0], numbers[4]);
-        System.out.print("\nComparison of first and last elements: ");
-        if (result == 1) {
-            System.out.println("First element is greater than last.");
-        } else if (result == 0) {
-            System.out.println("First and last elements are equal.");
-        } else {
-            System.out.println("First element is less than last.");
-        }
 
-        scanner.close();
+        switch (result) {
+            case 1 -> System.out.println("First element is greater than last.");
+            case 0 -> System.out.println("First and last elements are equal.");
+            case -1 -> System.out.println("First element is less than last.");
+            default -> System.out.println("Unexpected comparison result.");
+        }
+    }
     }
 }
