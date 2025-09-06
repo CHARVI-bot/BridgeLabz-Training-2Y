@@ -76,7 +76,7 @@ public class NumberChecker2 {
 
             System.out.println("\nDigit Frequency:");
             System.out.printf("%-10s %-10s%n", "Digit", "Frequency");
-            for (int i = 0; i < frequency.length; i++) {
+            for (int i = 0; i < digits.length; i++) {
                 if (frequency[i][1] > 0) {
                     System.out.printf("%-10d %-10d%n", frequency[i][0], frequency[i][1]);
                 }
