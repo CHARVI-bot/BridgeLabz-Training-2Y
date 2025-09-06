@@ -2,15 +2,15 @@ import java.util.Scanner;
 
 public class BMICalculator {
 
-    public static void calculateBMI(double[][] data) {
-        for (int i = 0; i < data.length; i++) {
-            double weight = data[i][0];
-            double heightCm = data[i][1];
-            double heightM = heightCm / 100.0;
-            double bmi = weight / (heightM * heightM);
-            data[i][2] = bmi;
-        }
+public static void calculateBMI(double[][] data) {
+    for (int i = 0; i < data.length; i++) {
+        double weight = data[i][0];
+        double heightCm = data[i][1];
+        double heightM = heightCm / 100.0;
+        double bmi = weight / (heightM * heightM);
+        data[i][2] = bmi;
     }
+}
 
     public static String[] determineBMIStatus(double[][] data) {
         String[] status = new String[data.length];
