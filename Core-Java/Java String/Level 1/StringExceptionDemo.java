@@ -20,13 +20,11 @@ public class StringExceptionDemo {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print("Enter a string: ");
+            String userInput = scanner.nextLine();
 
-        System.out.print("Enter a string: ");
-        String userInput = scanner.nextLine();
-
-        handleException(userInput);
-
-        scanner.close();
+            handleException(userInput);
+        }
     }
 }
