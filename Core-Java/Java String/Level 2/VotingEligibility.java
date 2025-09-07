@@ -37,7 +37,8 @@ public class VotingEligibility {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        try (Scanner scanner = new Scanner(System.in)) {
+        scanner.close();
         System.out.print("Enter number of students: ");
         int n = scanner.nextInt();
 
@@ -46,5 +47,6 @@ public class VotingEligibility {
         String[][] eligibility = checkEligibility(ages);
 
         displayTable(eligibility);
+        }
     }
 }
