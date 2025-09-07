@@ -19,27 +19,25 @@ public class CharArrayComparison {
     }
 
     public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
+        try (Scanner scanner = new Scanner(System.in)) {
+        System.out.print("Enter a string: ");
+        String input = scanner.next();
 
-    System.out.print("Enter a string: ");
-    String input = scanner.next();
+        char[] manualChars = getCharsManually(input);
+        char[] builtInChars = input.toCharArray();
+        boolean areEqual = compareCharArrays(manualChars, builtInChars);
 
-    char[] manualChars = getCharsManually(input);
-    char[] builtInChars = input.toCharArray();
-    boolean areEqual = compareCharArrays(manualChars, builtInChars);
+        System.out.println("\nCharacters using manual method:");
+        for (char c : manualChars) {
+            System.out.print(c + " ");
+        }
 
-    System.out.println("\nCharacters using manual method:");
-    for (char c : manualChars) {
-        System.out.print(c + " ");
-    }
+        System.out.println("\n\nCharacters using toCharArray():");
+        for (char c : builtInChars) {
+            System.out.print(c + " ");
+        }
 
-    System.out.println("\n\nCharacters using toCharArray():");
-    for (char c : builtInChars) {
-        System.out.print(c + " ");
-    }
-
-    System.out.println("\n\nAre both arrays equal? " + areEqual);
-
-    scanner.close(); // ✅ Close the Scanner to avoid resource leak
+        System.out.println("\n\nAre both arrays equal? " + areEqual);
+        }
     }
 }
