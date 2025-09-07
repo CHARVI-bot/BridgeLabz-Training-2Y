@@ -1,13 +1,13 @@
 import java.util.Scanner;
 
-public class CharacterClassifier {
+public class CharacterClassifier1 {
 
     public static int getLength(String str) {
         int count = 0;
         try {
             while (true) {
                 for (int i = 0; i < str.length(); i++) {
-                char ch = str.charAt(i); // assuming you're looping through a string
+                char ch = str.charAt(i); 
 
                     if (Character.isDigit(ch)) {
                         System.out.println(ch + " is a digit");
